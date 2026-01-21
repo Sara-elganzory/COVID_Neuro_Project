@@ -6,106 +6,67 @@
 
 ![Status](https://img.shields.io/badge/Status-Completed-success)
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![R](https://img.shields.io/badge/R-Bioconductor-blue)
 ![Focus](https://img.shields.io/badge/Bioinformatics-Transcriptomics-green)
 
 ## 📌 Project Overview
-This project investigates the molecular mechanisms linking **COVID-19** to the acceleration of **Alzheimer’s Disease (AD)** and **Parkinson’s Disease (PD)**. 
 
-Unlike traditional analyses using web tools (e.g., GEO2R), this project utilizes a **custom Python bioinformatics pipeline** to process raw RNA-Seq data from the Gene Expression Omnibus (GEO). The goal was to identify shared inflammatory and neurodegenerative pathways and to test the "Prion Hypothesis" of SARS-CoV-2.
+This project investigates the molecular links between **COVID-19 (SARS-CoV-2)** and neurodegenerative conditions (**Alzheimer's** and **Parkinson's Disease**). Using a **Dual-Pipeline Approach (Python & R)**, we identified shared transcriptomic signatures that suggest COVID-19 may accelerate neurodegeneration through indirect environmental stress rather than direct prion protein activation.
 
 ## 🧪 Objective
 
-To investigate the molecular mechanisms linking COVID-19 to the acceleration of Alzheimer’s (AD) and Parkinson’s (PD), and to specifically test the "Prion Hypothesis" (whether SARS-CoV-2 induces prion-like misfolding) using transcriptomic data.
+To investigate the molecular mechanisms linking COVID-19 to the acceleration of Alzheimer’s (AD) and Parkinson’s (PD), and to specifically test the **"Prion Hypothesis"** (whether SARS-CoV-2 induces prion-like misfolding) using multi-omics validation.
 
-## 🔬 Methods
+## 🔬 Methodology: A Dual-Pipeline Approach
 
-- **Data:** High-throughput RNA-Seq data from GEO (COVID-19, AD, and PD datasets).
+To ensure reproducibility and statistical robustness, this study utilized two independent analytical pipelines:
 
-- **Pipeline:** Developed a custom Python pipeline (Pandas, SciPy, Scikit-Learn) instead of using standard web tools (GEO2R).
+### Phase 1: Python (Exploratory Analysis)
+* **Goal:** Data cleaning, dimensionality reduction (PCA), and candidate discovery.
+* **Tools:** Pandas, SciPy, Scikit-Learn, Matplotlib.
+* **Method:** Custom scripts replacing standard GUI tools (GEO2R) for greater control over normalization and intersection logic.
 
-- **Analysis:** Performed Differential Expression Analysis (Welch’s t-test), Principal Component Analysis (PCA), and Pairwise Intersection Analysis to find shared disease signatures.
+### Phase 2: R/Bioconductor (Statistical Validation)
+* **Goal:** Validation of candidates and advanced pathway enrichment.
+* **Tools:** limma, edgeR, clusterProfiler, KEGGREST.
+* **Method:** Voom normalization for mean-variance trend correction and Empirical Bayes statistics for differential expression.
 
-## 🧬 Key Findings
+## 🧬 Key Biological Insights
 
-### 1. COVID-19 & Parkinson's Disease (Oxidative Stress Link)
+### 1. COVID-19 & Parkinson's Disease (The Oxidative Stress Link)
 * **Shared Genes:** Identified **272** genes differentially expressed in both conditions.
-* **Key Discovery:** The presence of **MPO (Myeloperoxidase)** and **LPO** in the overlap suggests that COVID-19 may accelerate Parkinsonian pathology through **oxidative stress** and dopaminergic neuron damage.
+* **Key Discovery:** The upregulation of **MPO (Myeloperoxidase)** and **LPO** in the overlap.
+* **Implication:** COVID-19 triggers the same **oxidative stress** pathways that drive dopaminergic neuron death in Parkinson’s pathology.
 
-### 2. COVID-19 & Alzheimer's Disease (Synaptic Link)
+### 2. COVID-19 & Alzheimer's Disease (The Synaptic Link)
 * **Shared Genes:** Identified **320** genes differentially expressed in both conditions.
-* **Key Discovery:** The dysregulation of **DOC2A** (Synaptic vesicle fusion) and **AGPAT2** indicates a convergence on **synaptic dysfunction** and lipid metabolism.
+* **Key Discovery:** The dysregulation of **DOC2A** (Synaptic vesicle fusion) and **AGPAT2**.
+* **Implication:** A convergence on **synaptic dysfunction** and lipid metabolism, potentially explaining the cognitive "brain fog" associated with Long-COVID.
 
-### 3. The Prion Hypothesis
-* **Method:** Screened shared signatures for amyloidogenic markers (*PRNP, SNCA, MAPT, APP*).
-* **Outcome:** **No direct transcriptional overlap** was found.
-* **Conclusion:** The link between COVID-19 and neurodegeneration is likely driven by systemic inflammation (cytokine storm) rather than direct prion-like protein seeding at the transcriptional level.
-
-## 📈 Results Highlights
-
-1. **COVID-19 & Parkinson’s:** Identified **272 shared genes**.
-
-- **Key Discovery:** Upregulation of **MPO (Myeloperoxidase)**.
-
-- **Meaning:** COVID-19 triggers the same **oxidative stress** pathways that kill dopaminergic neurons in Parkinson’s.
-
-2. **COVID-19 & Alzheimer’s:** Identified **320 shared genes**.
-
-- **Key Discovery:** Dysregulation of **DOC2A** and **AGPAT2**.
-
-- **Meaning:** COVID-19 disrupts synaptic **vesicle fusion** and **lipid metabolism**, mimicking Alzheimer's pathology.
-
-3. **Prion Hypothesis:**
-
-- **Result:** **Negative**. No direct transcriptional overlap with PRNP, SNCA, or MAPT.
-
-## 💡 Implications
-
-The "Neuro-COVID" link is likely driven by **indirect systemic inflammation** (Cytokine Storm) and **oxidative stress** (MPO) rather than direct prion protein seeding. Therapeutic targets inhibiting MPO could potentially protect the brain during severe infection.
+### 3. The Prion Hypothesis (The "Two-Hit" Model)
+* **Initial Screen (Python):** No direct transcriptional overlap was found for *PRNP*, *SNCA*, or *MAPT*.
+* **Pathway Validation (R):** Targeted enrichment revealed systemic dysregulation of the **Prion Diseases Pathway (hsa05020)**.
+* **Conclusion:** The link is **indirect**. SARS-CoV-2 does not directly transcribe prion proteins but induces a cellular stress environment (proteostatic disruption) that mimics the conditions required for prion propagation.
 
 ## 📂 Repository Structure
 
 ```text
 COVID_Neuro_Project/
 │
-├── analysis.py           # The Master Python script (Data processing, Statistics, Plotting)
-├── README.md             # Project documentation (You are here)
+├── README.md                  # Project documentation
 │
-└── results/              # Output folder containing visualizations
-    ├── PCA_COVID19.png           # Quality Control Plots
-    ├── Volcano_Alzheimers.png    # Differential Expression Plots
-    ├── Heatmap_Parkinsons.png    # Hierarchical Clustering
-    ├── Venn_COVID_AD.png         # Intersection Analysis
-    └── SHARED_COVID_PD.csv       # List of common genes
-
-🛠️ Methodology & Tech Stack
-This analysis replaced standard GUI tools with a programmatic approach for reproducibility:
-
-Data Processing: Pandas (Log2 normalization, data cleaning).
-
-Statistical Analysis: SciPy (Welch’s T-Test for unequal variance).
-
-Dimensionality Reduction: Scikit-Learn (Principal Component Analysis).
-
-Visualization: Matplotlib and Seaborn (Volcano plots, Heatmaps).
-
-Intersection Logic: Matplotlib-Venn (Pairwise set analysis).
-
-🚀 How to Run
-1. Clone the repository.
-
-2. Install dependencies:
-
-  pip install pandas numpy scipy matplotlib seaborn scikit-learn matplotlib-venn mygene
-
-3. Run the analysis script:
-
-  python analysis.py
-
-📚 Data Sources
-
-COVID-19: GEO Accession GSE157103
-
-Alzheimer's: GEO Accession GSE159699
-
-Parkinson's: GEO Accession GSE68719
-
+├── Code/
+│   ├── Phase1_Python/         # Exploratory Analysis
+│   │   └── analysis_pipeline.py
+│   │
+│   └── Phase2_R_Validation/   # Statistical Validation
+│       └── Final_Project_Code.R
+│
+├── Results/                   # Output Visualizations
+│   ├── PCA_COVID19.png        # Quality Control Plots
+│   ├── Venn_COVID_AD.png      # Intersection Analysis
+│   ├── Prion_Heatmap.png      # Pathway Dysregulation (R)
+│   └── Shared_Genes.csv       # Final List of Common Genes
+│
+└── Report/
+    └── Final_Project_Report.pdf
