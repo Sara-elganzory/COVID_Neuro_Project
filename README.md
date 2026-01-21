@@ -1,4 +1,4 @@
-# Unraveling the Transcriptomic Overlap Between SARS-CoV-2 and Neurodegeneration
+# 🧬 Unraveling the Transcriptomic Overlap Between SARS-CoV-2 and Neurodegeneration
 
 **Student Name:** Sara Sayed Elganzory
 **Student ID:** 221000509
@@ -13,12 +13,23 @@ This project investigates the molecular mechanisms linking **COVID-19** to the a
 
 Unlike traditional analyses using web tools (e.g., GEO2R), this project utilizes a **custom Python bioinformatics pipeline** to process raw RNA-Seq data from the Gene Expression Omnibus (GEO). The goal was to identify shared inflammatory and neurodegenerative pathways and to test the "Prion Hypothesis" of SARS-CoV-2.
 
+## 🧪 Objective
+
+To investigate the molecular mechanisms linking COVID-19 to the acceleration of Alzheimer’s (AD) and Parkinson’s (PD), and to specifically test the "Prion Hypothesis" (whether SARS-CoV-2 induces prion-like misfolding) using transcriptomic data.
+
+## 🔬 Methods
+
+- **Data:** High-throughput RNA-Seq data from GEO (COVID-19, AD, and PD datasets).
+
+- **Pipeline:** Developed a custom Python pipeline (Pandas, SciPy, Scikit-Learn) instead of using standard web tools (GEO2R).
+
+- **Analysis:** Performed Differential Expression Analysis (Welch’s t-test), Principal Component Analysis (PCA), and Pairwise Intersection Analysis to find shared disease signatures.
+
 ## 🧬 Key Findings
 
 ### 1. COVID-19 & Parkinson's Disease (Oxidative Stress Link)
 * **Shared Genes:** Identified **272** genes differentially expressed in both conditions.
 * **Key Discovery:** The presence of **MPO (Myeloperoxidase)** and **LPO** in the overlap suggests that COVID-19 may accelerate Parkinsonian pathology through **oxidative stress** and dopaminergic neuron damage.
-
 
 ### 2. COVID-19 & Alzheimer's Disease (Synaptic Link)
 * **Shared Genes:** Identified **320** genes differentially expressed in both conditions.
@@ -28,6 +39,28 @@ Unlike traditional analyses using web tools (e.g., GEO2R), this project utilizes
 * **Method:** Screened shared signatures for amyloidogenic markers (*PRNP, SNCA, MAPT, APP*).
 * **Outcome:** **No direct transcriptional overlap** was found.
 * **Conclusion:** The link between COVID-19 and neurodegeneration is likely driven by systemic inflammation (cytokine storm) rather than direct prion-like protein seeding at the transcriptional level.
+
+## 📈 Results Highlights
+
+1. **COVID-19 & Parkinson’s:** Identified **272 shared genes**.
+
+- **Key Discovery:** Upregulation of **MPO (Myeloperoxidase)**.
+
+- **Meaning:** COVID-19 triggers the same **oxidative stress** pathways that kill dopaminergic neurons in Parkinson’s.
+
+2. **COVID-19 & Alzheimer’s:** Identified **320 shared genes**.
+
+- **Key Discovery:** Dysregulation of **DOC2A** and **AGPAT2**.
+
+- **Meaning:** COVID-19 disrupts synaptic **vesicle fusion** and **lipid metabolism**, mimicking Alzheimer's pathology.
+
+3. **Prion Hypothesis:**
+
+- **Result:** **Negative**. No direct transcriptional overlap with PRNP, SNCA, or MAPT.
+
+## 💡 Implications
+
+The "Neuro-COVID" link is likely driven by **indirect systemic inflammation** (Cytokine Storm) and **oxidative stress** (MPO) rather than direct prion protein seeding. Therapeutic targets inhibiting MPO could potentially protect the brain during severe infection.
 
 ## 📂 Repository Structure
 
@@ -62,16 +95,17 @@ Intersection Logic: Matplotlib-Venn (Pairwise set analysis).
 
 2. Install dependencies:
 
-pip install pandas numpy scipy matplotlib seaborn scikit-learn matplotlib-venn mygene
+  pip install pandas numpy scipy matplotlib seaborn scikit-learn matplotlib-venn mygene
 
 3. Run the analysis script:
 
-python analysis.py
+  python analysis.py
 
 📚 Data Sources
 
 COVID-19: GEO Accession GSE157103
 
 Alzheimer's: GEO Accession GSE159699
+
 
 Parkinson's: GEO Accession GSE68719
