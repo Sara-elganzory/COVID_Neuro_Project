@@ -16,8 +16,7 @@ This project investigates the molecular links between **COVID-19 (SARS-CoV-2)** 
 ## 🎥 Project Demo
 **Watch the full video walkthrough of the analysis and findings:**
 
-[![Watch the video](https://img.shields.io/badge/Watch_Video-Click_Here-red?style=for-the-badge&logo=youtube)]([YOUR_VIDEO_LINK_HERE](https://youtu.be/_kP7vMhSVms))
-
+[![Watch the video](https://img.shields.io/badge/Watch_Video-Click_Here-red?style=for-the-badge&logo=youtube)]([[YOUR_VIDEO_LINK_HERE](https://youtu.be/_kP7vMhSVms)]
 > **Note:** The video covers the workflow, key biological findings (MPO/DOC2A), and the explanation of the Prion Hypothesis results.
 
 ## 🧪 Objective
@@ -77,5 +76,6 @@ COVID_Neuro_Project/
 │
 └── Report/
     └── Final_Project_Report.pdf
+
 
 
