@@ -13,6 +13,10 @@
 
 This project investigates the molecular links between **COVID-19 (SARS-CoV-2)** and neurodegenerative conditions (**Alzheimer's** and **Parkinson's Disease**). Using a **Dual-Pipeline Approach (Python & R)**, we identified shared transcriptomic signatures that suggest COVID-19 may accelerate neurodegeneration through indirect environmental stress rather than direct prion protein activation.
 
+## 🎥 Project Demo
+Click the link below to watch the project presentation and voiceover:
+🔗 **[View Project Presentation Video]([YOUR_VIDEO_LINK_HERE](https://youtu.be/_kP7vMhSVms))**
+
 ## 🧪 Objective
 
 To investigate the molecular mechanisms linking COVID-19 to the acceleration of Alzheimer’s (AD) and Parkinson’s (PD), and to specifically test the **"Prion Hypothesis"** (whether SARS-CoV-2 induces prion-like misfolding) using multi-omics validation.
@@ -70,3 +74,4 @@ COVID_Neuro_Project/
 │
 └── Report/
     └── Final_Project_Report.pdf
+
